@@ -1,0 +1,115 @@
+/* Base button style */
+.industry-btn {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+/* Gradient overlay animation */
+.industry-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, #007bff, #00c6ff);
+  transition: all 0.5s ease;
+  z-index: 0;
+  border-radius: 50px; /* match button rounded-pill */
+}
+
+/* Move overlay on hover */
+.industry-btn:hover::before {
+  left: 0;
+}
+
+/* Keep text and icons above overlay */
+.industry-btn img,
+.industry-btn h6,
+.industry-btn small {
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+/* Icon scaling on hover */
+.industry-btn:hover img {
+  transform: scale(1.2) rotate(-5deg);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+/* Text color change on hover */
+.industry-btn:hover h6,
+.industry-btn:hover small {
+  color: white !important;
+}
+
+/* Button shadow on hover */
+.industry-btn:hover {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Smooth transition for active button */
+.industry-btn.active {
+  color: white !important;
+  background-color: #007bff !important;
+}
+
+/* Right Content Animation */
+.industry-content img {
+  border-radius: 12px;
+  box-shadow: 0 15px 25px rgba(0,0,0,0.1);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.industry-content img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 30px rgba(0,0,0,0.2);
+}
+
+.industry-content h4 {
+  transition: color 0.3s ease;
+}
+
+.industry-content h4:hover {
+  color: #007bff;
+}
+
+/* Points cards */
+.industry-points .p-2 {
+  background: linear-gradient(145deg, #ffffff, #f0f4f8);
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.industry-points .p-2:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  background: linear-gradient(145deg, #007bff, #00c6ff);
+  color: white;
+}
+
+/* Optional: fade-in animation */
+[data-aos] {
+  opacity: 0;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+[data-aos].aos-animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .industry-btn {
+    flex-direction: row !important;
+    justify-content: flex-start;
+  }
+
+  .industry-content img {
+    margin-bottom: 20px;
+  }
+}

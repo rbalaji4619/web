@@ -1,0 +1,519 @@
+/* === Wrapper === */
+.gamedev-wrapper {
+  font-family: "Poppins", sans-serif;
+  color: #222;
+  background: linear-gradient(135deg, #f9fafc 0%, #f0f4ff 100%);
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+}
+
+.gamedev-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.1) 0%, transparent 20%),
+    radial-gradient(circle at 80% 20%, rgba(255, 107, 107, 0.1) 0%, transparent 20%),
+    radial-gradient(circle at 40% 40%, rgba(79, 70, 229, 0.05) 0%, transparent 30%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* === Hero Section === */
+.gamedev-hero {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 30%, #6d28d9 70%, #5b21b6 100%);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.gamedev-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='50' cy='50' r='1' fill='%23FFFFFF' fill-opacity='0.1' /%3E%3C/svg%3E"),
+    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.2) 0%, transparent 25%),
+    radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.15) 0%, transparent 25%);
+  pointer-events: none;
+}
+
+.gamedev-hero h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1.2;
+  font-weight: 800;
+  background: linear-gradient(to right, #fff, #e0e7ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  display: inline-block;
+}
+
+.gamedev-hero h1::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60%;
+  height: 4px;
+  background: linear-gradient(to right, #f97316, #f59e0b);
+  border-radius: 2px;
+}
+
+.gamedev-hero p {
+  font-size: 1.25rem;
+  opacity: 0.9;
+  max-width: 90%;
+  margin-top: 1.5rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.gamedev-hero p::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 80%;
+  width: 4px;
+  background: linear-gradient(to bottom, #f97316, #7c3aed);
+  border-radius: 2px;
+}
+
+.hero-image {
+  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.3));
+  transform: perspective(1000px) rotateY(-5deg);
+  transition: all 0.5s ease;
+  max-width: 100%;
+  height: auto;
+}
+
+.hero-image:hover {
+  transform: perspective(1000px) rotateY(0);
+}
+
+.gamedev-btn {
+  background: linear-gradient(135deg, #f97316 0%, #f59e0b 100%);
+  border: none;
+  border-radius: 50px;
+  padding: 14px 32px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: all 0.4s ease;
+  box-shadow: 0 10px 20px rgba(249, 115, 22, 0.3);
+}
+
+.gamedev-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: 0.5s;
+  z-index: -1;
+}
+
+.gamedev-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 15px 25px rgba(249, 115, 22, 0.4);
+}
+
+.gamedev-btn:hover::before {
+  left: 100%;
+}
+
+/* === Game Types Section === */
+.gamedev-types {
+  padding: 6rem 0;
+  position: relative;
+}
+
+.type-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 
+    0 10px 25px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transform-style: preserve-3d;
+  transition: all 0.4s ease;
+  height: 100%;
+}
+
+.type-card:hover {
+  transform: translateZ(10px);
+  box-shadow: 
+    0 15px 30px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.type-icon {
+  filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.1));
+  transition: all 0.4s ease;
+  font-size: 3.5rem;
+}
+
+.type-card:hover .type-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* === Timeline Section === */
+.gamedev-approach {
+  background: #fff;
+  padding: 6rem 0;
+}
+
+.timeline {
+  position: relative;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(to bottom, #8b5cf6, #7c3aed, #f97316);
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.timeline-step {
+  position: relative;
+  margin-bottom: 50px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.timeline-step:nth-child(odd) {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+.step-circle {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 8px 20px rgba(139, 92, 246, 0.3);
+  transition: all 0.4s ease;
+}
+
+.timeline-step:hover .step-circle {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 12px 25px rgba(139, 92, 246, 0.4);
+}
+
+.step-content {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 12px;
+  margin: 0 20px;
+  flex: 1;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: all 0.4s ease;
+}
+
+.timeline-step:hover .step-content {
+  transform: translateZ(10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+.step-content h5 {
+  margin-bottom: 12px;
+  font-weight: 700;
+  color: #8b5cf6;
+  font-size: 1.25rem;
+  position: relative;
+  display: inline-block;
+}
+
+.step-content h5::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 30px;
+  height: 3px;
+  background: linear-gradient(to right, #f97316, #7c3aed);
+  border-radius: 2px;
+}
+
+.timeline-step:nth-child(odd) .step-content h5::after {
+  left: auto;
+  right: 0;
+}
+
+/* === Services Section === */
+.gamedev-services {
+  background: linear-gradient(to bottom, #f8faff 0%, #f0f4ff 100%);
+  padding: 6rem 0;
+  position: relative;
+}
+
+.service-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform: translateY(0);
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+
+.service-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.05) 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.service-card:hover::before {
+  opacity: 1;
+}
+
+.service-icon {
+  font-size: 4rem;
+  filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.1));
+  transition: all 0.4s ease;
+}
+
+.service-card:hover .service-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* === Tools Scroller === */
+.gamedev-tools {
+  background: #fafafa;
+  padding: 6rem 0;
+}
+
+.tool-scroller {
+  scrollbar-width: none;
+  padding: 1rem 0;
+  mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
+}
+
+.tool-scroller::-webkit-scrollbar {
+  display: none;
+}
+
+.tool-logo-card {
+  min-width: 140px;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  box-shadow: 
+    0 8px 20px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+}
+
+.tool-logo-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: 0.5s;
+}
+
+.tool-logo-card:hover::before {
+  left: 100%;
+}
+
+.tool-logo-card:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 
+    0 15px 30px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.gamedev-tool-logo {
+  height: 60px;
+  max-width: 70px;
+  object-fit: contain;
+  filter: grayscale(0.3);
+  transition: all 0.4s ease;
+}
+
+.tool-logo-card:hover .gamedev-tool-logo {
+  filter: grayscale(0);
+  transform: scale(1.1);
+}
+
+/* === CTA Section === */
+.gamedev-cta {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 30%, #6d28d9 70%, #5b21b6 100%);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.gamedev-cta::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 20%),
+    radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 20%);
+  pointer-events: none;
+}
+
+.gamedev-cta h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.gamedev-cta p {
+  margin: 10px auto 30px;
+  max-width: 600px;
+  opacity: 0.9;
+  font-size: 1.2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .timeline::before {
+    left: 30px;
+  }
+  
+  .timeline-step,
+  .timeline-step:nth-child(odd) {
+    flex-direction: row;
+    text-align: left;
+    padding-left: 80px;
+  }
+  
+  .step-content {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  .step-content h5::after {
+    right: auto;
+    left: 0;
+  }
+  
+  .tool-scroller {
+    justify-content: flex-start;
+    padding-bottom: 1rem;
+  }
+  
+  .gamedev-hero {
+    text-align: center;
+    padding: 4rem 0;
+  }
+  
+  .gamedev-hero p::before {
+    display: none;
+  }
+  
+  .gamedev-hero p {
+    padding-left: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .hero-image {
+    margin-top: 2rem;
+    transform: perspective(1000px) rotateY(0);
+  }
+  
+  .gamedev-btn {
+    display: block;
+    margin: 0.5rem auto;
+    width: 80%;
+    max-width: 250px;
+  }
+}
+
+/* Animation keyframes */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.type-icon, .service-icon {
+  animation: float 4s ease-in-out infinite;
+}
+
+.type-card:hover .type-icon,
+.service-card:hover .service-icon {
+  animation: none;
+}
+
+/* Ensure all sections have proper spacing */
+section {
+  position: relative;
+}
+
+/* Fix for full height on mobile */
+@media (max-width: 768px) {
+  .gamedev-hero {
+    min-height: 100vh;
+    padding: 2rem 0;
+  }
+  
+  .gamedev-hero .row {
+    min-height: 80vh;
+  }
+}

@@ -1,0 +1,67 @@
+.career-hero {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  min-height: 80vh;
+  padding: 2rem 0;
+}
+
+.career-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  border-radius: 50px;
+  padding: 12px 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.career-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+}
+
+.benefit-card {
+  transition: all 0.3s ease;
+  border: 1px solid #f0f0f0;
+  background: white;
+}
+
+.benefit-card:hover {
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.job-card {
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.job-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.culture-section {
+  background-color: #f8f9fa;
+}
+
+.status-badge {
+  background-color: transparent;
+  border: 1px solid #007bff;
+  color: #007bff;
+}
+
+.skill-badge {
+  padding: 0.35em 0.65em;
+  font-size: 0.75em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .career-hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .job-card {
+    margin-bottom: 1.5rem;
+  }
+}
