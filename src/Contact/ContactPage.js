@@ -131,7 +131,7 @@ const ContactPage = () => {
 
             <div className="form-row">
               <div className="form-group">
-                <label htmlFor="email">Email*</label>
+                <label htmlFor="email">Email<span className='text-danger ms-1'>*</span></label>
                 <input
                   type="email"
                   id="email"
@@ -144,7 +144,7 @@ const ContactPage = () => {
               </div>
 
               <div className="form-group">
-                <label htmlFor="phoneNumber">Phone Number</label>
+                <label htmlFor="phoneNumber">Phone Number<span className='text-danger ms-1'>*</span></label>
                 <input
                   type="tel"
                   id="phoneNumber"
@@ -157,7 +157,7 @@ const ContactPage = () => {
             </div>
 
             <div className="form-group">
-              <label htmlFor="description">Describe your project*</label>
+              <label htmlFor="description">Describe your project<span className='text-danger ms-1'>*</span></label>
               <textarea
                 id="description"
                 name="description"

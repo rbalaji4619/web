@@ -18,7 +18,7 @@ const Hero = () => {
         <p className="lead mt-3">
           Empowering businesses with technology-driven solutions for the future.
         </p>
-        <Button variant="primary" onClick={() => navigate("/contact")} size="lg" className="mt-4">
+        <Button variant="primary" onClick={() => navigate("/#services")} size="lg" className="mt-4">
           Get Started
         </Button>
       </Container>

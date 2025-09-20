@@ -30,11 +30,11 @@ const Footer = () => {
           {/* Quick Links */}
           <div className="col-md-2 mb-4">
             <h5>Overview</h5>
-            <ul className="footer-links">
+            <ul className="footer-links" style={{textDecoration:'none'}}>
               <li>Terms & Conditions</li>
               <li>Privacy Policy</li>
-              <li>Contact Us</li>
-              <li>Careers</li>
+              <li><Link to='/contact'>Contact Us</Link></li>
+              <li><Link to='careers'>Careers</Link></li>
               <li>Blog</li>
             </ul>
           </div>
@@ -65,7 +65,9 @@ const Footer = () => {
             &copy; 2025 - BTC Pvt Ltd
           </div>
           <div className="social-icons">
-            <FaInstagram />
+            <a href="https://www.instagram.com/burj_tech_consultancy/">
+              <FaInstagram />
+            </a>
             <FaWhatsapp />
             <FaTwitter />
             <a href="https://www.linkedin.com/company/burj-tech-consultancy">

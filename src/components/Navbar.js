@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
-import logo from '../assets/logo.jpg'; // Ensure the logo path is correct
+import logo from '../assets/logo.png'; // Ensure the logo path is correct
 import './Navigation.css';
 
 const Navigation = () => {
