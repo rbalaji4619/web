@@ -302,3 +302,25 @@
     display: none;
   }
 }
+
+.spinner {
+  animation: spin 1s linear infinite;
+  width: 24px;
+  height: 24px;
+  margin-left: 8px;
+}
+
+.path {
+  stroke: #fff; /* Change color as needed */
+  stroke-linecap: round;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+button[disabled] {
+  opacity: 0.7;
+  cursor: not-allowed;
+}

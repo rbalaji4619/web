@@ -63,7 +63,7 @@ const Navigation = () => {
           <img 
             src={logo} 
             alt="BURJ Tech Consultancy" 
-            className="navbar-logo"
+            className="navbar-logo img-fluid" 
           />
         </Navbar.Brand>
         

@@ -2,20 +2,27 @@
 .custom-navbar {
   /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
   /* background-color: #1C1C1C; */
-  background: linear-gradient(to right, #002f6c, #0055aa);
+  /* background: linear-gradient(to right, #002f6c, #0055aa); */
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  /* border-bottom: 1px solid rgba(255, 255, 255, 0.1); */
   padding: 0.8rem 0;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 1000;
+    background: linear-gradient(
+    120deg,          /* diagonal angle */
+    #ffffff 0%,      /* white start */
+    #ffffff 30%,     /* white end (adjust width behind logo) */
+    #1a1a8e 20%,     /* dark blue start */
+    #1a1a8e 100%     /* dark blue end */
+  );
 }
 
-.custom-navbar.navbar-scrolled {
+/* .custom-navbar.navbar-scrolled {
   background: rgba(102, 126, 234, 0.95);
   backdrop-filter: blur(15px);
   padding: 0.5rem 0;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-}
+} */
 
 /* Brand/Logo Styles */
 .navbar-brand-custom {

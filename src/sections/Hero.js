@@ -14,7 +14,7 @@ const Hero = () => {
       style={{ minHeight: "100vh", background: `url(${heroImage}) center/cover no-repeat` }}
     >
       <Container className="text-center text-white" data-aos="fade-up">
-        <h1 className="display-3 fw-bold">Burj Tech Consultancy</h1>
+        <h1 className="display-3 fw-bold">BURJ Tech Consultancy</h1>
         <p className="lead mt-3">
           Empowering businesses with technology-driven solutions for the future.
         </p>

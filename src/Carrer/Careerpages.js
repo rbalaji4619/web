@@ -26,7 +26,7 @@ const JOBS = [
 // Replace with your actual Google Form URLs
 const GOOGLE_FORM_URLS = {
   "Frontend Developer": "https://docs.google.com/forms/d/e/your-frontend-form-id/viewform",
-  "General Application": "https://docs.google.com/forms/d/e/your-general-form-id/viewform"
+  "General Application": "https://docs.google.com/forms/d/1XDOGcguUsvXJJsJIkh0pjmuc0lK3mvr8_t0g7jEldUQ/viewform?edit_requested=true"
 };
 
 const BENEFITS = [

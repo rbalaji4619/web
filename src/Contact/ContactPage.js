@@ -1,20 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import './ContactPage.css';
+import axios from 'axios';
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
-    fullName: '',
-    companyName: '',
+    name: '',
+    companyname: '',
     email: '',
     phoneNumber: '',
-    // budget: '',
-    projectDescription: ''
+    description: ''
   });
 
   const [isVisible, setIsVisible] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
-    // Trigger animations when component mounts
     setIsVisible(true);
   }, []);
 
@@ -25,22 +25,39 @@ const ContactPage = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log(formData);
-    alert('Thank you for contacting us! We will get back to you soon.');
+    setIsSubmitting(true);
+
+    try {
+      const res = await axios.post('https://web-contact.onrender.com/api/contact', formData);
+      if (res.status === 200 || res.status === 201) {
+        alert('Thank you for contacting us! We will get back to you soon.');
+        setFormData({
+          name: '',
+          email: '',
+          phoneNumber: '',
+          description: '',
+          companyname: ''
+        });
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert('Something went wrong. Please try again later.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
-    <div className="contact-page" style={{paddingTop:'106px'}}>
+    <div className="contact-page" style={{ paddingTop: '106px' }}>
       <div className="contact-background">
         <div className="floating-shape shape-1"></div>
         <div className="floating-shape shape-2"></div>
         <div className="floating-shape shape-3"></div>
         <div className="floating-shape shape-4"></div>
       </div>
-      
+
       <div className={`contact-container ${isVisible ? 'visible' : ''}`}>
         <div className="contact-header">
           <h1 className="slide-in">Get in Touch with</h1>
@@ -61,7 +78,7 @@ const ContactPage = () => {
               <h3>Email Us</h3>
               <p>burjtechconsultancy@gmail.com</p>
             </div>
-            
+
             <div className="contact-item">
               <div className="icon-wrapper">
                 <svg className="icon" viewBox="0 0 24 24">
@@ -71,7 +88,7 @@ const ContactPage = () => {
               <h3>Call Us</h3>
               <p>+91 9444369625</p>
             </div>
-            
+
             <div className="contact-item">
               <div className="icon-wrapper">
                 <svg className="icon" viewBox="0 0 24 24">
@@ -87,26 +104,26 @@ const ContactPage = () => {
           <form className="contact-form fade-in" onSubmit={handleSubmit}>
             <div className="form-row">
               <div className="form-group">
-                <label htmlFor="fullName">Full name*</label>
+                <label htmlFor="fullName">Full name<span className='text-danger ms-1'>*</span></label>
                 <input
                   type="text"
-                  id="fullName"
-                  name="fullName"
+                  id="name"
+                  name="name"
                   placeholder="Your full name"
-                  value={formData.fullName}
+                  value={formData.name}
                   onChange={handleChange}
                   required
                 />
               </div>
 
               <div className="form-group">
-                <label htmlFor="companyName">Company name</label>
+                <label htmlFor="companyname">Company name</label>
                 <input
                   type="text"
-                  id="companyName"
-                  name="companyName"
+                  id="companyname"
+                  name="companyname"
                   placeholder="Your company name"
-                  value={formData.companyName}
+                  value={formData.companyname}
                   onChange={handleChange}
                 />
               </div>
@@ -139,41 +156,43 @@ const ContactPage = () => {
               </div>
             </div>
 
-            {/* <div className="form-group">
-              <label htmlFor="budget">Project Budget*</label>
-              <select
-                id="budget"
-                name="budget"
-                value={formData.budget}
-                onChange={handleChange}
-                required
-              >
-                <option value="">Select budget range</option>
-                <option value="5000">$5,000 - $10,000</option>
-                <option value="10000">$10,000 - $25,000</option>
-                <option value="25000">$25,000 - $50,000</option>
-                <option value="50000">$50,000+</option>
-              </select>
-            </div> */}
-
             <div className="form-group">
-              <label htmlFor="projectDescription">Describe your project*</label>
+              <label htmlFor="description">Describe your project*</label>
               <textarea
-                id="projectDescription"
-                name="projectDescription"
+                id="description"
+                name="description"
                 placeholder="Tell us about your project requirements"
-                value={formData.projectDescription}
+                value={formData.description}
                 onChange={handleChange}
                 rows="5"
                 required
               ></textarea>
             </div>
 
-            <button type="submit" className="submit-btn">
-              <span>Send Message</span>
-              <svg className="send-icon" viewBox="0 0 24 24">
-                <path fill="currentColor" d="M2,21L23,12L2,3V10L17,12L2,14V21Z" />
-              </svg>
+            <button
+              type="submit"
+              className="submit-btn"
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? (
+                <svg className="spinner" viewBox="0 0 50 50">
+                  <circle
+                    className="path"
+                    cx="25"
+                    cy="25"
+                    r="20"
+                    fill="none"
+                    strokeWidth="5"
+                  />
+                </svg>
+              ) : (
+                <>
+                  <span>Send Message</span>
+                  <svg className="send-icon" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M2,21L23,12L2,3V10L17,12L2,14V21Z" />
+                  </svg>
+                </>
+              )}
             </button>
           </form>
         </div>

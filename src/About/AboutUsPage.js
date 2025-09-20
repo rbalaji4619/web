@@ -164,8 +164,8 @@ const AboutUsPage = () => {
           <h1 className={`hero-title ${isVisible ? 'slide-up' : ''}`}>Crafting Digital Excellence</h1>
           <p className={`hero-subtitle ${isVisible ? 'slide-up' : ''}`}>We're a passionate team creating innovative solutions for the modern world</p>
           <div className={`hero-cta ${isVisible ? 'slide-up' : ''}`}>
-            <button className="cta-button">Our Work</button>
-            <button className="cta-button secondary">Meet the Team</button>
+            {/* <button className="cta-button">Our Work</button> */}
+            <button className="cta-button">Meet the Team</button>
           </div>
         </div>
         <div className="scroll-indicator">
@@ -301,7 +301,7 @@ const AboutUsPage = () => {
       </section>
 
       {/* Team Section */}
-      <section className="about-team">
+      {/* <section className="about-team">
         <div className="container">
           <div className="section-header reveal">
             <h2>Meet Our Team</h2>
@@ -326,10 +326,10 @@ const AboutUsPage = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Testimonials Section */}
-      <section className="testimonials-section">
+      {/* <section className="testimonials-section">
         <div className="container">
           <div className="section-header reveal">
             <h2>What People Say</h2>
@@ -347,7 +347,7 @@ const AboutUsPage = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
       <section className="cta-section">

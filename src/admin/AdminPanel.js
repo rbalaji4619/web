@@ -509,7 +509,7 @@ const AdminPanel = () => {
     </div>
     
     <form onSubmit={handleUpdateApplicationStatus}>
-      <div className="status-form-group">
+      <div className="status-form-groups">
         <label>Status *</label>
         <select
           name="Status"
@@ -527,7 +527,7 @@ const AdminPanel = () => {
       {statusForm.Status === 'Shortlisted' && (
         <>
           <div className="status-form-row">
-            <div className="status-form-group">
+            <div className="status-form-groups">
               <label>Interview Date *</label>
               <input
                 type="date"
@@ -537,7 +537,7 @@ const AdminPanel = () => {
                 required
               />
             </div>
-            <div className="status-form-group">
+            <div className="status-form-groups">
               <label>Interview Time *</label>
               <input
                 type="time"
@@ -549,7 +549,7 @@ const AdminPanel = () => {
             </div>
           </div>
           
-          <div className="status-form-group">
+          <div className="status-form-groups">
             <label>Interview Mode *</label>
             <select
               name="InterviewMode"
@@ -563,7 +563,7 @@ const AdminPanel = () => {
             </select>
           </div>
           
-          <div className="status-form-group">
+          <div className="status-form-groups">
             <label>
               {statusForm.InterviewMode === 'Online' 
                 ? 'Interview Link *' 
@@ -613,7 +613,7 @@ const AdminPanel = () => {
       <div className="login-form">
         <h2>Admin Login</h2>
         <form onSubmit={handleLogin}>
-          <div className="form-group">
+          <div className="form-groups">
             <label>Email</label>
             <input
               type="email"
@@ -623,7 +623,7 @@ const AdminPanel = () => {
               required
             />
           </div>
-          <div className="form-group">
+          <div className="form-groups">
             <label>Password</label>
             <input
               type="password"
@@ -648,7 +648,7 @@ const AdminPanel = () => {
       <h2>{isEditing ? 'Edit Job' : 'Post a New Job'}</h2>
       <form onSubmit={handlePostJob} className="job-form">
         <div className="form-row">
-          <div className="form-group">
+          <div className="form-groups">
             <label>Job Title *</label>
             <input
               type="text"
@@ -658,7 +658,7 @@ const AdminPanel = () => {
               required
             />
           </div>
-          <div className="form-group">
+          <div className="form-groups">
             <label>Location *</label>
             <input
               type="text"
@@ -670,7 +670,7 @@ const AdminPanel = () => {
           </div>
         </div>
 
-        <div className="form-group">
+        <div className="form-groups">
           <label>Job Description *</label>
           <textarea
             name="Description"
@@ -681,7 +681,7 @@ const AdminPanel = () => {
           ></textarea>
         </div>
 
-        <div className="form-group">
+        <div className="form-groups">
           <label>Requirements *</label>
           <textarea
             name="Requirement"
@@ -692,7 +692,7 @@ const AdminPanel = () => {
           ></textarea>
         </div>
 
-        <div className="form-group">
+        <div className="form-groups">
           <label>Skills (comma separated) *</label>
           <input
             type="text"
@@ -705,7 +705,7 @@ const AdminPanel = () => {
         </div>
 
         <div className="form-row">
-          <div className="form-group">
+          <div className="form-groups">
             <label>Experience (years) *</label>
             <input
               type="number"
@@ -716,7 +716,7 @@ const AdminPanel = () => {
               required
             />
           </div>
-          <div className="form-group">
+          <div className="form-groups">
             <label>Job Type *</label>
             <select
               name="JobType"
@@ -733,7 +733,7 @@ const AdminPanel = () => {
         </div>
 
         <div className="form-row">
-          <div className="form-group">
+          <div className="form-groups">
             <label>Employment Mode *</label>
             <select
               name="EmploymentMode"
@@ -746,7 +746,7 @@ const AdminPanel = () => {
               <option value="Hybrid">Hybrid</option>
             </select>
           </div>
-          <div className="form-group">
+          <div className="form-groups">
             <label>Salary Range *</label>
             <input
               type="text"
@@ -760,7 +760,7 @@ const AdminPanel = () => {
         </div>
 
         <div className="form-row">
-          <div className="form-group">
+          <div className="form-groups">
             <label>Application Link *</label>
             <input
               type="url"
@@ -770,7 +770,7 @@ const AdminPanel = () => {
               required
             />
           </div>
-          <div className="form-group">
+          <div className="form-groups">
             <label>Application Deadline *</label>
             <input
               type="datetime-local"
@@ -782,7 +782,7 @@ const AdminPanel = () => {
           </div>
         </div>
 
-        <div className="form-group">
+        <div className="form-groups">
           <label>Status *</label>
           <select
             name="Status"
