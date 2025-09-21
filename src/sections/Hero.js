@@ -3,6 +3,7 @@ import { Container, Button } from "react-bootstrap";
 import "../styles/Hero.css"
 import { useNavigate } from "react-router-dom";
 import heroImage from '../assets/hero-bg.jpg'; // Assuming you have a hero image in assets
+import { HashLink } from "react-router-hash-link";
 
 const Hero = () => {
 
@@ -18,9 +19,11 @@ const Hero = () => {
         <p className="lead mt-3">
           Empowering businesses with technology-driven solutions for the future.
         </p>
-        <Button variant="primary" onClick={() => navigate("/#services")} size="lg" className="mt-4">
-          Get Started
-        </Button>
+        <HashLink smooth to="/#services">
+          <Button variant="primary" size="lg" className="mt-4">
+            Get Started
+          </Button>
+        </HashLink>
       </Container>
     </section>
   );
