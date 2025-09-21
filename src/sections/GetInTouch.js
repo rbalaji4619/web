@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import '../styles/GetInTouch.css';
+import axios from 'axios';
 
 const GetInTouch = () => {
   const [formData, setFormData] = useState({
     name: '',
+    companyname: '',
     email: '',
-    subject: '',
-    message: ''
+    phoneNumber: '',
+    description: ''
   });
 
   const handleChange = (e) => {
@@ -16,26 +18,36 @@ const GetInTouch = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Here you would typically handle form submission
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message! We will get back to you soon.');
-    setFormData({
-      name: '',
-      email: '',
-      subject: '',
-      message: ''
-    });
+
+    console.log(formData)
+
+    try {
+      const res = await axios.post('https://web-contact.onrender.com/api/contact', formData);
+      if (res.status === 200 || res.status === 201) {
+        alert('Thank you for contacting us! We will get back to you soon.');
+        setFormData({
+          name: '',
+          email: '',
+          phoneNumber: '',
+          description: '',
+          companyname: ''
+        });
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert('Something went wrong. Please try again later.');
+    }
   };
 
   return (
-    <section id="get-in-touch" className="get-in-touch-section">
+    <section id="get-in-touch" className="get-in-touch-section py-3">
       <div className="container">
         <h2>Get in Touch</h2>
         <p className="section-subtitle">We'd love to hear from you. Reach out to us with any questions or inquiries.</p>
         
-        <div className="contacts-content">
+        <div className="contacts-content mt-4">
           <div className="contacts-info">
             <div className="info-item">
               <div className="icon">
@@ -44,7 +56,7 @@ const GetInTouch = () => {
               <div className="details">
                 <h4>Address</h4>
                 <p>No.469 Pavalamalli St, Extn.<br />
-                Narasimhapurak, Kakkalur<br />
+                Narasimhapuram, Kakkalur<br />
                 Tiruvallur - 602 003</p>
               </div>
             </div>
@@ -70,18 +82,19 @@ const GetInTouch = () => {
             </div>
             
             <div className="social-links">
-              <a href="/" aria-label="Facebook"><i className="fa-brands fa-facebook"></i></a>
-              <a href="/" aria-label="Twitter"><i className="fa-brands fa-square-x-twitter"></i></a>
-              <a href="/" aria-label="LinkedIn"><i className="fa-brands fa-linkedin"></i></a>
-              <a href="/" aria-label="Instagram"><i className="fa-brands fa-square-instagram"></i></a>
+              {/* <a href="/" aria-label="Facebook"><i className="fa-brands fa-facebook"></i></a> */}
+              <a href="https://wa.me/message/64YKOIDQIVZOF1" aria-label="WhatsApp"><i className="fa-brands fa-square-whatsapp"></i></a>
+              <a href="https://x.com/burj_tech7571" aria-label="Twitter"><i className="fa-brands fa-square-x-twitter"></i></a>
+              <a href="https://www.linkedin.com/company/burj-tech-consultancy" aria-label="LinkedIn"><i className="fa-brands fa-linkedin"></i></a>
+              <a href="https://www.instagram.com/burj_tech_consultancy/" aria-label="Instagram"><i className="fa-brands fa-square-instagram"></i></a>
             </div>
           </div>
           
           <div className="contacts-form">
             <form onSubmit={handleSubmit}>
-              <div className="form-row">
-                <div className="form-group">
-                  <label htmlFor="name">Your Name</label>
+              <div className="forms-row">
+                <div className="forms-group">
+                  <label htmlFor="name">Name</label>
                   <input
                     type="text"
                     id="name"
@@ -91,8 +104,21 @@ const GetInTouch = () => {
                     required
                   />
                 </div>
-                <div className="form-group">
-                  <label htmlFor="email">Your Email</label>
+                <div className="forms-group">
+                  <label htmlFor="email">Company Name</label>
+                  <input
+                    type="text"
+                    id="companyname"
+                    name="companyname"
+                    value={formData.companyname}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+              </div>
+              <div className='forms-row'>
+                <div className="forms-group">
+                  <label htmlFor="subject">Email</label>
                   <input
                     type="email"
                     id="email"
@@ -102,27 +128,25 @@ const GetInTouch = () => {
                     required
                   />
                 </div>
+                <div className="forms-group">
+                  <label htmlFor='phoneNumber'>Phone Number</label>
+                  <input
+                    type="tel"
+                    id="phoneNumber"
+                    name="phoneNumber"
+                    value={formData.phoneNumber}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
               </div>
-              
-              <div className="form-group">
-                <label htmlFor="subject">Subject</label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-              
-              <div className="form-group">
+              <div className="forms-group">
                 <label htmlFor="message">Your Message</label>
                 <textarea
                   id="message"
-                  name="message"
+                  name="description"
                   rows="5"
-                  value={formData.message}
+                  value={formData.description}
                   onChange={handleChange}
                   required
                 ></textarea>

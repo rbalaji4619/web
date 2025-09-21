@@ -1,5 +1,5 @@
 .get-in-touch-section {
-  padding: 80px 0;
+  /* padding: 80px 0; */
   background-color: #f9f9f9;
 }
 
@@ -104,26 +104,26 @@
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
 }
 
-.form-row {
+.forms-row {
   display: flex;
   gap: 20px;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
 }
 
-.form-group {
+.forms-group {
   flex: 1;
   margin-bottom: 20px;
 }
 
-.form-group label {
+.forms-group label {
   display: block;
   margin-bottom: 8px;
   font-weight: 500;
   color: #333;
 }
 
-.form-group input,
-.form-group textarea {
+.forms-group input,
+.forms-group textarea {
   width: 100%;
   padding: 12px 15px;
   border: 1px solid #ddd;
@@ -132,8 +132,8 @@
   transition: border-color 0.3s;
 }
 
-.form-group input:focus,
-.form-group textarea:focus {
+.forms-group input:focus,
+.forms-group textarea:focus {
   outline: none;
   border-color: #4a6cf7;
 }
@@ -157,7 +157,7 @@
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .form-row {
+  .forms-row {
     flex-direction: column;
     gap: 0;
   }
