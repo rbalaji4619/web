@@ -11,7 +11,7 @@
     background: linear-gradient(
     120deg,          /* diagonal angle */
     #ffffff 0%,      /* white start */
-    #ffffff 35%,     /* white end (adjust width behind logo) */
+    #ffffff 38%,     /* white end (adjust width behind logo) */
     #1a1a8e 20%,     /* dark blue start */
     #1a1a8e 100%     /* dark blue end */
   );
