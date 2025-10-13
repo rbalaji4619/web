@@ -31,7 +31,9 @@ const Footer = () => {
           <div className="col-md-2 mb-4 mt-1">
             <h5>Overview</h5>
             <ul className="footer-links" style={{textDecoration:'none'}}>
-              <li>Terms & Conditions</li>
+              <li>
+                <Link to="/terms-and-conditions" >Terms & Conditions</Link>
+              </li>
               <li>Privacy Policy</li>
               <li><Link to='/contact'>Contact Us</Link></li>
               <li><Link to='careers'>Careers</Link></li>
