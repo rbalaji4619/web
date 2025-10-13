@@ -61,7 +61,7 @@ const ContactPage = () => {
       <div className={`contact-container ${isVisible ? 'visible' : ''}`}>
         <div className="contact-header">
           <h1 className="slide-in">Get in Touch with</h1>
-          <h1 className="company-name slide-in">Our Office</h1>
+          <h1 className="company-name slide-in">BURJ Tech Consultancy Pvt Ltd</h1>
           <p className="intro-text fade-in">
             We're here to help. Whether you have questions about our services, need support, or want to discuss potential collaborations.
           </p>

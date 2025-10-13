@@ -16,6 +16,8 @@ import Careerpages from "./Carrer/Careerpages";
 import ContactPage from "./Contact/ContactPage";
 import AboutUsPage from "./About/AboutUsPage";
 import AdminPanel from "./admin/AdminPanel";
+import TermsAndCondition from "./terms&con/TermsAndCondition";
+import RefundPolicy from "./refundpolicy/RefundPolicy";
 
 function App() {
   useEffect(() => {
@@ -38,6 +40,8 @@ function App() {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/about" element={<AboutUsPage />} />
         <Route path="/admin" element={<AdminPanel />} />
+        <Route path="/terms-and-conditions" element={<TermsAndCondition />} />
+        <Route path="/refund-policy" element={<RefundPolicy />} />
       </Routes>
       <Footer />
     </Router>
