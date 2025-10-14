@@ -18,6 +18,7 @@ import AboutUsPage from "./About/AboutUsPage";
 import AdminPanel from "./admin/AdminPanel";
 import TermsAndCondition from "./terms&con/TermsAndCondition";
 import RefundPolicy from "./refundpolicy/RefundPolicy";
+import BuyNowPage from "./buynow/BuyNowPage";
 
 function App() {
   useEffect(() => {
@@ -39,9 +40,10 @@ function App() {
         <Route path="/careers" element={<Careerpages />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/about" element={<AboutUsPage />} />
-        <Route path="/admin" element={<AdminPanel />} />
+        {/* <Route path="/admin" element={<AdminPanel />} /> */}
         <Route path="/terms-and-conditions" element={<TermsAndCondition />} />
         <Route path="/refund-policy" element={<RefundPolicy />} />
+        <Route path="/buynow" element={<BuyNowPage />} />
       </Routes>
       <Footer />
     </Router>
