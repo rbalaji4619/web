@@ -1,13 +1,13 @@
 import React from "react";
 import { Container, Button } from "react-bootstrap";
 import "../styles/Hero.css"
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import heroImage from '../assets/hero-bg.jpg'; // Assuming you have a hero image in assets
 import { HashLink } from "react-router-hash-link";
 
 const Hero = () => {
 
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
   return (
     <section
       id="hero"

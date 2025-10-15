@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Row, Col, Button, Badge } from "react-bootstrap";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { Helmet } from 'react-helmet-async';
 import "aos/dist/aos.css";
 import "../styles/GameDevelopment.css";
 import gameDevHero from '../assets/game.png';
@@ -122,180 +123,189 @@ const gameServices = [
 
 const GameDevelopment = () => {
   return (
-    <motion.div
-      className="gamedev-wrapper"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1 }}
-    >
-      {/* Hero Section */}
-      <section className="gamedev-hero d-flex align-items-center">
-        <Container>
-          <Row className="align-items-center">
-            <Col md={6} data-aos="fade-right">
-              <Badge bg="light" text="dark" className="mb-3 px-3 py-2 rounded-pill">
-                Interactive Entertainment
-              </Badge>
-              <h1 className="fw-bold display-4">Game Development</h1>
-              <p className="lead mt-3">
-                We create immersive, engaging games that captivate players and 
-                deliver unforgettable experiences across all platforms.
-              </p>
-              <div className="mt-4">
-                <Link to="/#services">
-                  <Button size="lg" className="gamedev-btn me-3">⬅ Back to Services</Button>
-                </Link>
-                <Link to="/contact">
-                  <Button size="lg" variant="outline-light" className="ms-2">
-                    Start Your Project
-                  </Button>
-                </Link>
-              </div>
-            </Col>
-            <Col md={6} data-aos="fade-left">
-              <img
-                src={gameDevHero}
-                alt="Game Development"
-                className="img-fluid hero-image"
-              />
-            </Col>
-          </Row>
-        </Container>
-      </section>
-
-      {/* Game Types Section */}
-      <section className="gamedev-types py-5">
-        <Container>
-          <Row className="justify-content-center mb-5">
-            <Col lg={8} className="text-center">
-              <h2 className="text-center fw-bold mb-5">Game Platforms We Develop For</h2>
-              <p className="text-muted text-center">
-                From mobile to VR, we create captivating gaming experiences tailored 
-                to your target audience and platform requirements.
-              </p>
-            </Col>
-          </Row>
-          
-          <Row className="g-4">
-            {gameTypes.map((type, index) => (
-              <Col md={6} lg={3} key={index}>
-                <motion.div 
-                  className="type-card text-center p-4 h-100 rounded-4"
-                  data-aos="fade-up"
-                  data-aos-delay={index * 100}
-                  whileHover={{ y: -8 }}
-                >
-                  <div className="type-icon display-1 mb-3">{type.icon}</div>
-                  <h5 className="fw-bold mb-3">{type.title}</h5>
-                  <p className="text-muted mb-3">{type.desc}</p>
-                  <ul className="list-unstyled text-start">
-                    {type.features.map((feature, fIndex) => (
-                      <li key={fIndex} className="mb-2 small">
-                        <span className="text-primary me-2">✓</span> {feature}
-                      </li>
-                    ))}
-                  </ul>
-                </motion.div>
-              </Col>
-            ))}
-          </Row>
-        </Container>
-      </section>
-
-      {/* Development Process Timeline */}
-      <section className="gamedev-approach py-5 bg-light">
-        <Container>
-          <h2 className="text-center fw-bold mb-5">Our Game Development Process</h2>
-          <div className="timeline">
-            {developmentProcess.map((step, index) => (
-              <motion.div
-                className="timeline-step"
-                key={step.id}
-                data-aos="fade-up"
-                data-aos-delay={index * 200}
-              >
-                <div className="step-circle">{step.id}</div>
-                <div className="step-content">
-                  <div className="d-flex align-items-center mb-2">
-                    <span className="me-2 display-6">{step.icon}</span>
-                    <h5 className="mb-0">{step.title}</h5>
-                  </div>
-                  <p className="mb-0">{step.desc}</p>
+    <>
+      <Helmet>
+        <title>Game Development Services - Burj Tech Consultancy</title>
+        <meta name="description" content="Develop immersive games for mobile, PC, console, AR/VR, and web using Unity, Unreal Engine, and more. Full lifecycle services from concept, prototyping, art production to launch and support." />
+        <link rel="canonical" href="https://www.btcglobal.info/services/game-development" />
+      </Helmet>
+      <motion.div
+        className="gamedev-wrapper"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
+        {/* Hero Section */}
+        <section className="gamedev-hero d-flex align-items-center">
+          <Container>
+            <Row className="align-items-center">
+              <Col md={6} data-aos="fade-right">
+                <Badge bg="light" text="dark" className="mb-3 px-3 py-2 rounded-pill">
+                  Interactive Entertainment
+                </Badge>
+                <h1 className="fw-bold display-4">Game Development</h1>
+                <p className="lead mt-3">
+                  We create immersive, engaging games that captivate players and 
+                  deliver unforgettable experiences across all platforms.
+                </p>
+                <div className="mt-4">
+                  <Link to="/#services">
+                    <Button size="lg" className="gamedev-btn me-3">⬅ Back to Services</Button>
+                  </Link>
+                  <Link to="/contact">
+                    <Button size="lg" variant="outline-light" className="ms-2">
+                      Start Your Project
+                    </Button>
+                  </Link>
                 </div>
-              </motion.div>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      {/* Game Services Section */}
-      <section className="gamedev-services py-5">
-        <Container>
-          <Row className="justify-content-center mb-5">
-            <Col lg={8} className="text-center">
-              <h2 className="text-center fw-bold mb-5">Game Development Services</h2>
-              <p className="text-muted text-center">
-                Comprehensive game development solutions from concept to launch and beyond
-              </p>
-            </Col>
-          </Row>
-          
-          <Row className="g-4">
-            {gameServices.map((service, index) => (
-              <Col md={6} lg={3} key={index}>
-                <motion.div 
-                  className="service-card text-center p-4 h-100 rounded-4"
-                  data-aos="fade-up"
-                  data-aos-delay={index * 100}
-                  whileHover={{ y: -8 }}
-                >
-                  <div className="service-icon display-1 mb-3">{service.icon}</div>
-                  <h5 className="fw-bold mb-3">{service.title}</h5>
-                  <p className="text-muted mb-0">{service.desc}</p>
-                </motion.div>
               </Col>
-            ))}
-          </Row>
-        </Container>
-      </section>
+              <Col md={6} data-aos="fade-left">
+                <img
+                  src={gameDevHero}
+                  alt="Game Development"
+                  className="img-fluid hero-image"
+                />
+              </Col>
+            </Row>
+          </Container>
+        </section>
 
-      {/* Tools Scroller */}
-      <section className="gamedev-tools py-5 bg-light text-center">
-        <h2 className="fw-bold mb-4" data-aos="fade-up">Technologies We Use</h2>
-        {technologies.map((category, index) => (
-          <div key={index} className="mb-5">
-            <h4 className="h5 fw-bold mb-4" data-aos="fade-up">{category.category}</h4>
-            <div className="tool-scroller d-flex justify-content-center gap-5 overflow-auto py-3">
-              {category.techs.map((tool, i) => (
+        {/* Game Types Section */}
+        <section className="gamedev-types py-5">
+          <Container>
+            <Row className="justify-content-center mb-5">
+              <Col lg={8} className="text-center">
+                <h2 className="text-center fw-bold mb-5">Game Platforms We Develop For</h2>
+                <p className="text-muted text-center">
+                  From mobile to VR, we create captivating gaming experiences tailored 
+                  to your target audience and platform requirements.
+                </p>
+              </Col>
+            </Row>
+            
+            <Row className="g-4">
+              {gameTypes.map((type, index) => (
+                <Col md={6} lg={3} key={index}>
+                  <motion.div 
+                    className="type-card text-center p-4 h-100 rounded-4"
+                    data-aos="fade-up"
+                    data-aos-delay={index * 100}
+                    whileHover={{ y: -8 }}
+                  >
+                    <div className="type-icon display-1 mb-3">{type.icon}</div>
+                    <h5 className="fw-bold mb-3">{type.title}</h5>
+                    <p className="text-muted mb-3">{type.desc}</p>
+                    <ul className="list-unstyled text-start">
+                      {type.features.map((feature, fIndex) => (
+                        <li key={fIndex} className="mb-2 small">
+                          <span className="text-primary me-2">✓</span> {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </motion.div>
+                </Col>
+              ))}
+            </Row>
+          </Container>
+        </section>
+
+        {/* Development Process Timeline */}
+        <section className="gamedev-approach py-5 bg-light">
+          <Container>
+            <h2 className="text-center fw-bold mb-5">Our Game Development Process</h2>
+            <div className="timeline">
+              {developmentProcess.map((step, index) => (
                 <motion.div
-                  key={i}
-                  className="tool-logo-card text-center"
-                  whileHover={{ scale: 1.1 }}
-                  data-aos="zoom-in"
-                  data-aos-delay={i * 150}
+                  className="timeline-step"
+                  key={step.id}
+                  data-aos="fade-up"
+                  data-aos-delay={index * 200}
                 >
-                  <img src={tool.logo} alt={tool.name} className="gamedev-tool-logo" />
-                  <p className="mt-2 fw-medium">{tool.name}</p>
+                  <div className="step-circle">{step.id}</div>
+                  <div className="step-content">
+                    <div className="d-flex align-items-center mb-2">
+                      <span className="me-2 display-6">{step.icon}</span>
+                      <h5 className="mb-0">{step.title}</h5>
+                    </div>
+                    <p className="mb-0">{step.desc}</p>
+                  </div>
                 </motion.div>
               ))}
             </div>
-          </div>
-        ))}
-      </section>
+          </Container>
+        </section>
 
-      {/* CTA Section */}
-      <section className="gamedev-cta text-center text-light">
-        <Container>
-          <h2 data-aos="fade-up">Ready to create an amazing game?</h2>
-          <p data-aos="fade-up" data-aos-delay="200">
-            Let's work together to build immersive gaming experiences that players will love.
-          </p>
-          <Button size="lg" className="gamedev-btn" data-aos="zoom-in" data-aos-delay="400">
-            Start Your Game Project
-          </Button>
-        </Container>
-      </section>
-    </motion.div>
+        {/* Game Services Section */}
+        <section className="gamedev-services py-5">
+          <Container>
+            <Row className="justify-content-center mb-5">
+              <Col lg={8} className="text-center">
+                <h2 className="text-center fw-bold mb-5">Game Development Services</h2>
+                <p className="text-muted text-center">
+                  Comprehensive game development solutions from concept to launch and beyond
+                </p>
+              </Col>
+            </Row>
+            
+            <Row className="g-4">
+              {gameServices.map((service, index) => (
+                <Col md={6} lg={3} key={index}>
+                  <motion.div 
+                    className="service-card text-center p-4 h-100 rounded-4"
+                    data-aos="fade-up"
+                    data-aos-delay={index * 100}
+                    whileHover={{ y: -8 }}
+                  >
+                    <div className="service-icon display-1 mb-3">{service.icon}</div>
+                    <h5 className="fw-bold mb-3">{service.title}</h5>
+                    <p className="text-muted mb-0">{service.desc}</p>
+                  </motion.div>
+                </Col>
+              ))}
+            </Row>
+          </Container>
+        </section>
+
+        {/* Tools Scroller */}
+        <section className="gamedev-tools py-5 bg-light text-center">
+          <h2 className="fw-bold mb-4" data-aos="fade-up">Technologies We Use</h2>
+          {technologies.map((category, index) => (
+            <div key={index} className="mb-5">
+              <h4 className="h5 fw-bold mb-4" data-aos="fade-up">{category.category}</h4>
+              <div className="tool-scroller d-flex justify-content-center gap-5 overflow-auto py-3">
+                {category.techs.map((tool, i) => (
+                  <motion.div
+                    key={i}
+                    className="tool-logo-card text-center"
+                    whileHover={{ scale: 1.1 }}
+                    data-aos="zoom-in"
+                    data-aos-delay={i * 150}
+                  >
+                    <img src={tool.logo} alt={tool.name} className="gamedev-tool-logo" />
+                    <p className="mt-2 fw-medium">{tool.name}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </section>
+
+        {/* CTA Section */}
+        <section className="gamedev-cta text-center text-light">
+          <Container>
+            <h2 data-aos="fade-up">Ready to create an amazing game?</h2>
+            <p data-aos="fade-up" data-aos-delay="200">
+              Let's work together to build immersive gaming experiences that players will love.
+            </p>
+            <Link to="/contact">
+              <Button size="lg" className="gamedev-btn" data-aos="zoom-in" data-aos-delay="400">
+                Start Your Game Project
+              </Button>
+            </Link>
+          </Container>
+        </section>
+      </motion.div>
+    </>
   );
 };
 

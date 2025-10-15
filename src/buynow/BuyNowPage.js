@@ -1,5 +1,6 @@
 import React from "react";
 import "./BuyNowPage.css";
+import { Helmet } from 'react-helmet-async';
 
 const BuyNowPage = () => {
   const products = [
@@ -54,58 +55,64 @@ const BuyNowPage = () => {
   ];
 
   return (
-
-    <div className="pt-5 mt-5 pricing-page">
-      <div className="container">
-      <div className="text-center mb-4 pricing-header">
-        <h1 className="fw-bold">Purchase Our Software</h1>
-        <p className="text-muted">
-          Choose the right plan for your needs. All payments are processed securely.
-        </p>
-      </div>
-
-      <div className="row">
-        {products.map((p) => (
-          <div key={p.id} className="col-lg-4 col-md-6 mb-4">
-            <div className="card shadow-sm border-0 h-100 p-3 pricing-card">
-              <div className="card-body d-flex flex-column">
-                <h4 className="fw-bold text-center mb-2">{p.title}</h4>
-                <p className="text-muted text-center mb-3">{p.description}</p>
-                <h3 className="text-primary text-center mb-3">{p.price}</h3>
-                <ul className="list-unstyled text-start small flex-grow-1">
-                  {p.features.map((f, i) => (
-                    <li key={i} className="mb-2">
-                      {f}
-                    </li>
-                  ))}
-                </ul>
-                <button
-                  className="btn btn-primary mt-3 w-100 pricing-btn"
-                  onClick={() => alert(`Buy Now clicked for ${p.title}`)}
-                >
-                  Buy Now
-                </button>
-              </div>
-            </div>
+    <>
+      <Helmet>
+        <title>Buy Now - Pricing Plans | Burj Tech Consultancy</title>
+        <meta name="description" content="Choose from our flexible pricing plans and purchase the ideal software license for your needs, from Starter to Enterprise." />
+        <link rel="canonical" href="https://www.btcglobal.info/buynow" />
+      </Helmet>
+      <div className="pt-5 mt-5 pricing-page">
+        <div className="container">
+          <div className="text-center mb-4 pricing-header">
+            <h1 className="fw-bold">Purchase Our Software</h1>
+            <p className="text-muted">
+              Choose the right plan for your needs. All payments are processed securely.
+            </p>
           </div>
-        ))}
-      </div>
 
-      <div className="text-center pb-2 pricing-footer">
-        <p className="small text-muted">
-          By purchasing, you agree to our{" "}
-          <a href="/terms-and-conditions" className="text-decoration-none">
-            Terms & Conditions
-          </a>{" "}
-          and{" "}
-          <a href="/refund-policy" className="text-decoration-none">
-            Refund Policy
-          </a>
-          .
-        </p>
+          <div className="row">
+            {products.map((p) => (
+              <div key={p.id} className="col-lg-4 col-md-6 mb-4">
+                <div className="card shadow-sm border-0 h-100 p-3 pricing-card">
+                  <div className="card-body d-flex flex-column">
+                    <h4 className="fw-bold text-center mb-2">{p.title}</h4>
+                    <p className="text-muted text-center mb-3">{p.description}</p>
+                    <h3 className="text-primary text-center mb-3">{p.price}</h3>
+                    <ul className="list-unstyled text-start small flex-grow-1">
+                      {p.features.map((f, i) => (
+                        <li key={i} className="mb-2">
+                          {f}
+                        </li>
+                      ))}
+                    </ul>
+                    <button
+                      className="btn btn-primary mt-3 w-100 pricing-btn"
+                      onClick={() => alert(`Buy Now clicked for ${p.title}`)}
+                    >
+                      Buy Now
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center pb-2 pricing-footer">
+            <p className="small text-muted">
+              By purchasing, you agree to our{" "}
+              <a href="/terms-and-conditions" className="text-decoration-none">
+                Terms & Conditions
+              </a>{" "}
+              and{" "}
+              <a href="/refund-policy" className="text-decoration-none">
+                Refund Policy
+              </a>
+              .
+            </p>
+          </div>
+        </div>
       </div>
-    </div>
-    </div>
+    </>
   );
 };
 

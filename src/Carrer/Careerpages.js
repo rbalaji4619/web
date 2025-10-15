@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import "aos/dist/aos.css";
 import "./Careerpages.css";
 import { Link } from "react-router-dom";
+import { Helmet } from 'react-helmet-async';
 
 // Sample job data (only one job)
 const JOBS = [
@@ -329,17 +330,24 @@ const Careerpages = () => {
   };
 
   return (
-    <motion.div
-      className="career-wrapper"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1 }}
-    >
-      <HeroSection />
-      <BenefitsSection />
-      <JobOpeningsSection jobs={jobs} loading={loading} onApply={handleApply} />
-      <CultureSection />
-    </motion.div>
+    <>
+      <Helmet>
+        <title>Careers - Join Burj Tech Consultancy</title>
+        <meta name="description" content="Explore career opportunities at Burj Tech Consultancy. Join our innovative team of innovators and shape the future of technology with competitive benefits and a collaborative culture." />
+        <link rel="canonical" href="https://www.btcglobal.info/careers" />
+      </Helmet>
+      <motion.div
+        className="career-wrapper"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
+        <HeroSection />
+        <BenefitsSection />
+        <JobOpeningsSection jobs={jobs} loading={loading} onApply={handleApply} />
+        <CultureSection />
+      </motion.div>
+    </>
   );
 };
 

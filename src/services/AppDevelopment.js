@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Row, Col, Button, Badge } from "react-bootstrap";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { Helmet } from 'react-helmet-async';
 import "aos/dist/aos.css";
 import "../styles/AppDevelopment.css";
 import appDevHero from '../assets/app.png';
@@ -118,175 +119,182 @@ const capabilities = [
 
 const AppDevelopment = () => {
   return (
-    <motion.div
-      className="appdev-wrapper"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1 }}
-    >
-      {/* Hero Section - Matching UI/UX page style */}
-      <section className="appdev-hero d-flex align-items-center">
-        <Container>
-          <Row className="align-items-center">
-            <Col md={6} data-aos="fade-right">
-              <Badge bg="light" text="dark" className="mb-3 px-3 py-2 rounded-pill">
-                Mobile & Web Applications
-              </Badge>
-              <h1 className="fw-bold display-4">App Development</h1>
-              <p className="lead mt-3">
-                We build high-performance, scalable applications that transform 
-                your ideas into digital solutions users love.
-              </p>
-              <div className="mt-4">
-                <Link to="/#services">
-                  <Button size="lg" className="appdev-btn me-3 my-3">⬅ Back to Services</Button>
-                </Link>
-                <Link to="/contact">
-                  <Button size="lg" variant="outline-light" className="ms-2">
-                    Start a Project
-                  </Button>
-                </Link>
-              </div>
-            </Col>
-            <Col md={6} data-aos="fade-left">
-              <img
-                src={appDevHero}
-                alt="App Development"
-                className="img-fluid hero-image"
-              />
-            </Col>
-          </Row>
-        </Container>
-      </section>
-
-      {/* App Types Section */}
-      <section className="appdev-types py-5">
-        <Container>
-          <Row className="justify-content-center mb-5">
-            <Col lg={8} className="text-center">
-              <h2 className="text-center fw-bold mb-3">Application Types We Build</h2>
-              <p className="text-muted text-center">
-                From native mobile apps to progressive web applications, we create solutions 
-                tailored to your business needs and target audience.
-              </p>
-            </Col>
-          </Row>
-          
-          <Row className="g-4">
-            {appTypes.map((type, index) => (
-              <Col md={6} lg={3} key={index}>
-                <motion.div 
-                  className="type-card text-center p-4 h-100 rounded-4"
-                  data-aos="fade-up"
-                  data-aos-delay={index * 100}
-                  whileHover={{ y: -8 }}
-                >
-                  <div className="type-icon display-1 mb-3">{type.icon}</div>
-                  <h5 className="fw-bold mb-3">{type.title}</h5>
-                  <p className="text-muted mb-0">{type.desc}</p>
-                </motion.div>
-              </Col>
-            ))}
-          </Row>
-        </Container>
-      </section>
-
-      {/* Development Process Timeline - Matching UI/UX page style */}
-      <section className="appdev-approach py-5 bg-light">
-        <Container>
-          <h2 className="text-center fw-bold mb-5">Our Development Process</h2>
-          <div className="timeline">
-            {developmentProcess.map((step, index) => (
-              <motion.div
-                className="timeline-step"
-                key={step.id}
-                data-aos="fade-up"
-                data-aos-delay={index * 200}
-              >
-                <div className="step-circle">{step.id}</div>
-                <div className="step-content">
-                  <div className="d-flex align-items-center mb-2">
-                    <span className="me-2 display-6">{step.icon}</span>
-                    <h5 className="mb-0">{step.title}</h5>
-                  </div>
-                  <p className="mb-0">{step.desc}</p>
+    <>
+      <Helmet>
+        <title>App Development Services - Burj Tech Consultancy</title>
+        <meta name="description" content="Build high-performance mobile and web apps with our expert app development services. Native iOS/Android, cross-platform React Native/Flutter, scalable architecture, and full lifecycle support." />
+        <link rel="canonical" href="https://www.btcglobal.info/services/app-development" />
+      </Helmet>
+      <motion.div
+        className="appdev-wrapper"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
+        {/* Hero Section - Matching UI/UX page style */}
+        <section className="appdev-hero d-flex align-items-center">
+          <Container>
+            <Row className="align-items-center">
+              <Col md={6} data-aos="fade-right">
+                <Badge bg="light" text="dark" className="mb-3 px-3 py-2 rounded-pill">
+                  Mobile & Web Applications
+                </Badge>
+                <h1 className="fw-bold display-4">App Development</h1>
+                <p className="lead mt-3">
+                  We build high-performance, scalable applications that transform 
+                  your ideas into digital solutions users love.
+                </p>
+                <div className="mt-4">
+                  <Link to="/#services">
+                    <Button size="lg" className="appdev-btn me-3 my-3">⬅ Back to Services</Button>
+                  </Link>
+                  <Link to="/contact">
+                    <Button size="lg" variant="outline-light" className="ms-2">
+                      Start a Project
+                    </Button>
+                  </Link>
                 </div>
-              </motion.div>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      {/* Technical Capabilities Section */}
-      <section className="appdev-capabilities py-5">
-        <Container>
-          <Row className="justify-content-center mb-5">
-            <Col lg={8} className="text-center">
-              <h2 className="text-center fw-bold mb-2">Technical Capabilities</h2>
-              <p className="text-muted text-center">
-                Our expertise spans the entire technology stack, ensuring robust and scalable solutions
-              </p>
-            </Col>
-          </Row>
-          
-          <Row className="g-4">
-            {capabilities.map((capability, index) => (
-              <Col md={6} lg={3} key={index}>
-                <motion.div 
-                  className="capability-card text-center p-4 h-100 rounded-4"
-                  data-aos="fade-up"
-                  data-aos-delay={index * 100}
-                  whileHover={{ y: -8 }}
-                >
-                  <div className="capability-icon display-1 mb-3">{capability.icon}</div>
-                  <h5 className="fw-bold mb-3">{capability.title}</h5>
-                  <p className="text-muted mb-0">{capability.desc}</p>
-                </motion.div>
               </Col>
-            ))}
-          </Row>
-        </Container>
-      </section>
+              <Col md={6} data-aos="fade-left">
+                <img
+                  src={appDevHero}
+                  alt="App Development"
+                  className="img-fluid hero-image"
+                />
+              </Col>
+            </Row>
+          </Container>
+        </section>
 
-      {/* Tools Scroller - Matching UI/UX page style */}
-      <section className="appdev-tools py-5 bg-light text-center">
-        <h2 className="fw-bold mb-4" data-aos="fade-up">Technologies We Use</h2>
-        {technologies.map((category, index) => (
-          <div key={index} className="mb-5">
-            <h4 className="h5 fw-bold mb-4" data-aos="fade-up">{category.category}</h4>
-            <div className="tool-scroller d-flex justify-content-center gap-5 overflow-auto py-3">
-              {category.techs.map((tool, i) => (
+        {/* App Types Section */}
+        <section className="appdev-types py-5">
+          <Container>
+            <Row className="justify-content-center mb-5">
+              <Col lg={8} className="text-center">
+                <h2 className="text-center fw-bold mb-3">Application Types We Build</h2>
+                <p className="text-muted text-center">
+                  From native mobile apps to progressive web applications, we create solutions 
+                  tailored to your business needs and target audience.
+                </p>
+              </Col>
+            </Row>
+            
+            <Row className="g-4">
+              {appTypes.map((type, index) => (
+                <Col md={6} lg={3} key={index}>
+                  <motion.div 
+                    className="type-card text-center p-4 h-100 rounded-4"
+                    data-aos="fade-up"
+                    data-aos-delay={index * 100}
+                    whileHover={{ y: -8 }}
+                  >
+                    <div className="type-icon display-1 mb-3">{type.icon}</div>
+                    <h5 className="fw-bold mb-3">{type.title}</h5>
+                    <p className="text-muted mb-0">{type.desc}</p>
+                  </motion.div>
+                </Col>
+              ))}
+            </Row>
+          </Container>
+        </section>
+
+        {/* Development Process Timeline - Matching UI/UX page style */}
+        <section className="appdev-approach py-5 bg-light">
+          <Container>
+            <h2 className="text-center fw-bold mb-5">Our Development Process</h2>
+            <div className="timeline">
+              {developmentProcess.map((step, index) => (
                 <motion.div
-                  key={i}
-                  className="tool-logo-card text-center"
-                  whileHover={{ scale: 1.1 }}
-                  data-aos="zoom-in"
-                  data-aos-delay={i * 150}
+                  className="timeline-step"
+                  key={step.id}
+                  data-aos="fade-up"
+                  data-aos-delay={index * 200}
                 >
-                  <img src={tool.logo} alt={tool.name} className="appdev-tool-logo" />
-                  <p className="mt-2 fw-medium">{tool.name}</p>
+                  <div className="step-circle">{step.id}</div>
+                  <div className="step-content">
+                    <div className="d-flex align-items-center mb-2">
+                      <span className="me-2 display-6">{step.icon}</span>
+                      <h5 className="mb-0">{step.title}</h5>
+                    </div>
+                    <p className="mb-0">{step.desc}</p>
+                  </div>
                 </motion.div>
               ))}
             </div>
-          </div>
-        ))}
-      </section>
+          </Container>
+        </section>
 
-      {/* CTA - Matching UI/UX page style */}
-      <section className="appdev-cta text-center text-light">
-        <Container>
-          <h2 data-aos="fade-up">Ready to build something amazing?</h2>
-          <p data-aos="fade-up" data-aos-delay="200">
-            Let's work together to create applications that delight your users and drive business growth.
-          </p>
-          <Link to="/contact">
-            <Button size="lg" className="webdev-btn" data-aos="zoom-in" data-aos-delay="400">
-              Start Your Project
-            </Button>
-          </Link>
-        </Container>
-      </section>
-    </motion.div>
+        {/* Technical Capabilities Section */}
+        <section className="appdev-capabilities py-5">
+          <Container>
+            <Row className="justify-content-center mb-5">
+              <Col lg={8} className="text-center">
+                <h2 className="text-center fw-bold mb-2">Technical Capabilities</h2>
+                <p className="text-muted text-center">
+                  Our expertise spans the entire technology stack, ensuring robust and scalable solutions
+                </p>
+              </Col>
+            </Row>
+            
+            <Row className="g-4">
+              {capabilities.map((capability, index) => (
+                <Col md={6} lg={3} key={index}>
+                  <motion.div 
+                    className="capability-card text-center p-4 h-100 rounded-4"
+                    data-aos="fade-up"
+                    data-aos-delay={index * 100}
+                    whileHover={{ y: -8 }}
+                  >
+                    <div className="capability-icon display-1 mb-3">{capability.icon}</div>
+                    <h5 className="fw-bold mb-3">{capability.title}</h5>
+                    <p className="text-muted mb-0">{capability.desc}</p>
+                  </motion.div>
+                </Col>
+              ))}
+            </Row>
+          </Container>
+        </section>
+
+        {/* Tools Scroller - Matching UI/UX page style */}
+        <section className="appdev-tools py-5 bg-light text-center">
+          <h2 className="fw-bold mb-4" data-aos="fade-up">Technologies We Use</h2>
+          {technologies.map((category, index) => (
+            <div key={index} className="mb-5">
+              <h4 className="h5 fw-bold mb-4" data-aos="fade-up">{category.category}</h4>
+              <div className="tool-scroller d-flex justify-content-center gap-5 overflow-auto py-3">
+                {category.techs.map((tool, i) => (
+                  <motion.div
+                    key={i}
+                    className="tool-logo-card text-center"
+                    whileHover={{ scale: 1.1 }}
+                    data-aos="zoom-in"
+                    data-aos-delay={i * 150}
+                  >
+                    <img src={tool.logo} alt={tool.name} className="appdev-tool-logo" />
+                    <p className="mt-2 fw-medium">{tool.name}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </section>
+
+        {/* CTA - Matching UI/UX page style */}
+        <section className="appdev-cta text-center text-light">
+          <Container>
+            <h2 data-aos="fade-up">Ready to build something amazing?</h2>
+            <p data-aos="fade-up" data-aos-delay="200">
+              Let's work together to create applications that delight your users and drive business growth.
+            </p>
+            <Link to="/contact">
+              <Button size="lg" className="webdev-btn" data-aos="zoom-in" data-aos-delay="400">
+                Start Your Project
+              </Button>
+            </Link>
+          </Container>
+        </section>
+      </motion.div>
+    </>
   );
 };
 

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Helmet } from 'react-helmet-async';
 
 import Hero from "../sections/Hero"
 import About from '../sections/About'
@@ -13,17 +14,24 @@ import WhyUsPage from '../sections/WhyUsPage'
 
 const Home = () => {
   return (
-    <div>
-      <Hero />
-      <About />
-      <Services />
-      <OurProcess />
-      <WhyUsPage />
-      <Industries />
-      <Technologies />
-      <FAQ />
-      <GetInTouch />
-    </div>
+    <>
+      <Helmet>
+        <title>Burj Tech Consultancy - Innovative IT Solutions & Digital Services</title>
+        <meta name="description" content="Discover Burj Tech Consultancy: Your trusted partner for web development, UI/UX design, app development, AI/ML, cloud services, and more. Explore our process, industries, technologies, and why choose us." />
+        <link rel="canonical" href="https://www.btcglobal.info/" />
+      </Helmet>
+      <div>
+        <Hero />
+        <About />
+        <Services />
+        <OurProcess />
+        <WhyUsPage />
+        <Industries />
+        <Technologies />
+        <FAQ />
+        <GetInTouch />
+      </div>
+    </>
   )
 }
 

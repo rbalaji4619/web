@@ -105,7 +105,7 @@ const Navigation = () => {
         <Navbar.Brand
           as={HashLink}
           smooth
-          to="/#hero"
+          to="/"
           className="navbar-brand-custom"
           onClick={() => handleNavClick("#hero")}
         >
