@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './ContactPage.css';
 import axios from 'axios';
-import { Helmet } from 'react-helmet-async';
+import { Helmet } from 'react-helmet';
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({

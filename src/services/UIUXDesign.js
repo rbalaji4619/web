@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Helmet } from 'react-helmet-async';
+import { Helmet } from 'react-helmet';
 import "aos/dist/aos.css";
 import "../styles/UIUXDesign.css";
 import uiux from '../assets/image-82-removebg-preview.png'

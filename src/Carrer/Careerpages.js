@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import "aos/dist/aos.css";
 import "./Careerpages.css";
 import { Link } from "react-router-dom";
-import { Helmet } from 'react-helmet-async';
+import { Helmet } from 'react-helmet';
 
 // Sample job data (only one job)
 const JOBS = [

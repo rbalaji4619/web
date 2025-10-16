@@ -1,6 +1,6 @@
 import React from "react";
 import "./BuyNowPage.css";
-import { Helmet } from "react-helmet-async";
+import { Helmet } from "react-helmet";
 import { useNavigate } from "react-router-dom";
 
 const BuyNowPage = () => {

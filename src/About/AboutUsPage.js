@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './AboutUsPage.css';
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import { Helmet } from 'react-helmet';
 
 const AboutUsPage = () => {
   const [isVisible, setIsVisible] = useState(false);

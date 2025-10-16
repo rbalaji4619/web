@@ -1,5 +1,5 @@
 import React from "react";
-import { Helmet } from 'react-helmet-async';
+import { Helmet } from 'react-helmet';
 import "./TermsAndCondition.css"; // Make sure to import the CSS file
 
 const TermsAndCondition = () => {

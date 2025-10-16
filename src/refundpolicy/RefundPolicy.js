@@ -1,6 +1,6 @@
 import React from "react";
 import "./RefundPolicy.css"; // Import the CSS file
-import { Helmet } from 'react-helmet-async';
+import { Helmet } from 'react-helmet';
 
 const RefundPolicy = () => {
   return (
