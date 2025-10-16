@@ -1,85 +1,125 @@
 import React from "react";
 import "./BuyNowPage.css";
-import { Helmet } from 'react-helmet-async';
+import { Helmet } from "react-helmet-async";
+import { useNavigate } from "react-router-dom";
 
 const BuyNowPage = () => {
-  const products = [
+  const navigate = useNavigate();
+
+  const services = [
     {
-      id: "starter",
-      title: "Starter License",
-      description: "Perfect for individuals who are just getting started. Includes basic tools and updates.",
-      features: ["1 user access", "Basic analytics", "Email support", "1-year validity"],
-      price: "₹999",
-      popular: false
+      id: "basic",
+      title: "Basic Website Package",
+      description:
+        "Perfect for startups or individuals who want a professional single-page website with responsive design.",
+      features: [
+        "1 Page Responsive Website",
+        "Custom Design",
+        "Basic SEO Setup",
+        "Delivery within 5 Days",
+      ],
+      price: "₹4,999",
+      popular: false,
     },
     {
-      id: "personal",
-      title: "Personal License",
-      description: "Designed for personal use with access to more advanced features and integrations.",
-      features: ["Up to 2 devices", "Advanced reports", "Priority email support", "1-year updates"],
-      price: "₹1,999",
-      popular: false
+      id: "standard",
+      title: "Standard Website Package",
+      description:
+        "Ideal for small businesses looking for a 3–5 page website with modern UI and contact form integration.",
+      features: [
+        "Up to 5 Pages",
+        "Modern UI/UX",
+        "Contact Form Integration",
+        "Basic SEO + Speed Optimization",
+      ],
+      price: "₹9,999",
+      popular: true,
     },
     {
-      id: "professional",
-      title: "Professional License",
-      description: "Best for freelancers and small businesses who need complete access and automation tools.",
-      features: ["3 device access", "Custom automation tools", "Data export", "Chat + Email support"],
-      price: "₹3,499",
-      popular: true
+      id: "premium",
+      title: "Premium Website Package",
+      description:
+        "Best for growing businesses that need advanced features like admin panel, blog, and animations.",
+      features: [
+        "Up to 10 Pages",
+        "Admin Dashboard",
+        "Blog + Gallery Integration",
+        "Custom Animations & Effects",
+      ],
+      price: "₹17,999",
+      popular: false,
+    },
+    {
+      id: "ecommerce",
+      title: "E-Commerce Website Package",
+      description:
+        "Perfect for online stores with full shopping cart, payment gateway, and order management system.",
+      features: [
+        "E-Commerce Functionality",
+        "Payment Gateway Integration",
+        "Product Dashboard",
+        "Inventory Management",
+      ],
+      price: "₹24,999",
+      popular: false,
     },
     {
       id: "business",
-      title: "Business License",
-      description: "For growing teams needing advanced integrations, security, and priority updates.",
-      features: ["5 user accounts", "Advanced API access", "Priority updates", "24/7 technical support"],
-      price: "₹5,999",
-      popular: false
-    },
-    {
-      id: "enterprise",
-      title: "Enterprise License",
-      description: "For large organizations with custom requirements, integrations, and SLA-based support.",
-      features: ["Unlimited users", "Dedicated account manager", "Custom integrations", "SLA-backed support"],
-      price: "₹9,999",
-      popular: false
-    },
-    {
-      id: "ultimate",
-      title: "Ultimate Lifetime License",
-      description: "One-time payment for lifetime access. Includes all updates and premium customer support.",
-      features: ["Lifetime validity", "All future updates", "Unlimited installations", "VIP customer service"],
-      price: "₹14,999",
-      popular: false
+      title: "Business Pro Package",
+      description:
+        "For established companies wanting premium web design with custom backend and API integration.",
+      features: [
+        "Custom Backend Development",
+        "Advanced Security Setup",
+        "API Integration",
+        "Premium Maintenance Plan",
+      ],
+      price: "₹34,999",
+      popular: false,
     },
   ];
+
+  const handleCustomize = () => {
+    navigate("/contact");
+  };
 
   return (
     <>
       <Helmet>
-        <title>Buy Now - Pricing Plans | Burj Tech Consultancy</title>
-        <meta name="description" content="Choose from our flexible pricing plans and purchase the ideal software license for your needs, from Starter to Enterprise." />
-        <link rel="canonical" href="https://www.btcglobal.info/buynow" />
+        <title>Web Development Plans | Burj Tech Consultancy</title>
+        <meta
+          name="description"
+          content="Choose from our professional web development packages or customize your project to fit your business needs."
+        />
+        <link rel="canonical" href="https://www.btcglobal.info/web-plans" />
       </Helmet>
+
       <div className="pt-5 mt-5 pricing-page">
         <div className="container">
           <div className="text-center mb-4 pricing-header">
-            <h1 className="fw-bold">Purchase Our Software</h1>
+            <h1 className="fw-bold">Our Web Development Packages</h1>
             <p className="text-muted">
-              Choose the right plan for your needs. All payments are processed securely.
+              Choose a plan that fits your business needs — from a simple
+              portfolio to a full-fledged e-commerce solution.
             </p>
           </div>
 
           <div className="row">
-            {products.map((p) => (
-              <div key={p.id} className="col-lg-4 col-md-6 mb-4">
-                <div className="card shadow-sm border-0 h-100 p-3 pricing-card">
+            {services.map((s) => (
+              <div key={s.id} className="col-lg-4 col-md-6 mb-4">
+                <div
+                  className={`card shadow-sm border-0 h-100 p-3 pricing-card ${
+                    s.popular ? "highlight-card" : ""
+                  }`}
+                >
                   <div className="card-body d-flex flex-column">
-                    <h4 className="fw-bold text-center mb-2">{p.title}</h4>
-                    <p className="text-muted text-center mb-3">{p.description}</p>
-                    <h3 className="text-primary text-center mb-3">{p.price}</h3>
+                    <h4 className="fw-bold text-center mb-2">{s.title}</h4>
+                    <p className="text-muted text-center mb-3">
+                      {s.description}
+                    </p>
+                    <h3 className="text-primary text-center mb-3">{s.price}</h3>
                     <ul className="list-unstyled text-start small flex-grow-1">
-                      {p.features.map((f, i) => (
+                      {s.features.map((f, i) => (
                         <li key={i} className="mb-2">
                           {f}
                         </li>
@@ -87,9 +127,11 @@ const BuyNowPage = () => {
                     </ul>
                     <button
                       className="btn btn-primary mt-3 w-100 pricing-btn"
-                      onClick={() => alert(`Buy Now clicked for ${p.title}`)}
+                      onClick={() =>
+                        alert(`You selected the ${s.title} package!`)
+                      }
                     >
-                      Buy Now
+                      Get This Plan
                     </button>
                   </div>
                 </div>
@@ -97,10 +139,39 @@ const BuyNowPage = () => {
             ))}
           </div>
 
-          <div className="text-center pb-2 pricing-footer">
+          <div className="text-center mt-5">
+            <h5 className="fw-bold mb-3">Need a Custom Website?</h5>
+<button
+  className="btn px-4 py-2 fw-semibold border-2"
+  style={{
+    backgroundColor: 'transparent',
+    color: '#e3e9efff',
+    borderColor: '#2c3e50',
+    transition: 'all 0.3s ease',
+    position: 'relative',
+    overflow: 'hidden'
+  }}
+  onMouseEnter={(e) => {
+    e.target.style.backgroundColor = '#2c3e50ff';
+    e.target.style.color = 'white';
+  }}
+  onMouseLeave={(e) => {
+    e.target.style.backgroundColor = 'transparent';
+    e.target.style.color = '#ced7e0ff';
+  }}
+  onClick={handleCustomize}
+>
+  Customize Your Project
+</button>
+          </div>
+
+          <div className="text-center pb-2 mt-4 pricing-footer">
             <p className="small text-muted">
-              By purchasing, you agree to our{" "}
-              <a href="/terms-and-conditions" className="text-decoration-none">
+              By proceeding, you agree to our{" "}
+              <a
+                href="/terms-and-conditions"
+                className="text-decoration-none"
+              >
                 Terms & Conditions
               </a>{" "}
               and{" "}

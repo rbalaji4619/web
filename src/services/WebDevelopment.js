@@ -162,7 +162,7 @@ const WebDevelopment = () => {
                   <Link to="/#services">
                     <Button size="lg" className="webdev-btn me-3">⬅ Back to Services</Button>
                   </Link>
-                  <Link to="/contact">
+                  <Link to="/buynow">
                     <Button size="lg" variant="outline-light" className="ms-2">
                       Start a Project
                     </Button>
@@ -306,7 +306,7 @@ const WebDevelopment = () => {
             <p data-aos="fade-up" data-aos-delay="200">
               Let's work together to create a website that drives your business forward.
             </p>
-            <Link to="/contact">
+            <Link to="/buynow">
               <Button size="lg" className="webdev-btn" data-aos="zoom-in" data-aos-delay="400">
                 Start Your Project
               </Button>
