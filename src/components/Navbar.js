@@ -107,7 +107,7 @@ const Navigation = () => {
           smooth
           to="/"
           className="navbar-brand-custom"
-          onClick={() => handleNavClick("#hero")}
+          onClick={() => handleNavClick("/")}
         >
           <img src={logo} alt="BURJ Tech Consultancy" className="navbar-logo img-fluid" />
         </Navbar.Brand>
