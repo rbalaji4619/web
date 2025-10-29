@@ -120,8 +120,8 @@ const Navigation = () => {
           placement="end"
           className="bg-dark custom-offcanvas d-lg-none"
         >
-          <Offcanvas.Header closeButton>
-            <Offcanvas.Title id="offcanvasNavbarLabel">Menu</Offcanvas.Title>
+          <Offcanvas.Header className="text-white" closeButton>
+            <Offcanvas.Title id="offcanvasNavbarLabel" className="text-white" style={{fontSize:'29px'}}>Menu</Offcanvas.Title>
           </Offcanvas.Header>
           <Offcanvas.Body>{navLinks}</Offcanvas.Body>
         </Navbar.Offcanvas>

@@ -226,3 +226,9 @@
 .custom-offcanvas{
   color: black !important;
 }
+
+
+.offcanvas-header .btn-close {
+  filter: invert(1);
+  opacity: 1;
+}
